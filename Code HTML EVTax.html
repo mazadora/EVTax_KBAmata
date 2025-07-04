@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>คำนวณค่าภาษีรถไฟฟ้า</title>
+    <script src="EVTax.js"></script>
+
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { border: 1px solid #ccc; padding: 8px; background-color: #f2f2f2; }
+        input[type="text"] { font-size: 16px; padding: 5px; }
+        input[type="submit"] { height: 35px; font-size: 16px; font-weight: bold; color: Red; cursor: pointer; }
+        hr { margin: 30px 0; }
+        h2 { margin-top: 30px; }
+    </style>
+</head>
+
+<body onload="onLoad()">
+
+    <h1><img src="https://i.imgur.com/92uX0eH.png" weight="30" height="30"> ตรอ.เคบี อมตะ : คำนวณค่าภาษีรถออนไลน์ รถยนต์ไฟฟ้า</h1>
+
+    <form name="form1" onsubmit="return false;">
+        <h2><span style="color: black; font-weight: bold;">รย.1 รถยนต์นั่งส่วนบุคคลไม่เกิน 7 คน<br>(รถเก๋ง 4 ประตู)</span></h2>
+        <span style="font-size: 18px">น้ำหนักรถ</span> &nbsp;=&nbsp;
+        <input name="kg" type="text" size="14" maxlength="5" value="0">
+        &nbsp;<span style="font-size: 18px">กก.</span>
+        <p><input type="submit" onclick="getKgTax()" value="กดคำนวณ ค่าต่อภาษีรถเก๋ง"></p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="background-color: black; color: white;">ค่าต่อภาษีรถเก๋ง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="kg-tax" style="color: #06F; height: 20px;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <hr>
+
+    <form name="form2" onsubmit="return false;">
+        <h2><span style="color: blue; font-weight: bold;">รย.2 รถยนต์นั่งส่วนบุคคลเกิน 7 คน<br>(รถตู้)</span></h2>
+        <span style="font-size: 18px">น้ำหนักรถ</span> &nbsp;=&nbsp;
+        <input name="vanKG" type="text" size="14" maxlength="5" value="0">
+        <span style="font-size: 18px">&nbsp;กก.</span>
+        <p><input type="submit" onclick="getVanTax()" value="กดคำนวณ ค่าต่อภาษีรถตู้"></p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="background-color: blue; color: white;">ค่าต่อภาษีรถตู้</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="van-tax" style="color: #06F; height: 20px;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <hr>
+
+</body>
+</html>
