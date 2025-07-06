@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body onload="onLoad()">
+<body onload="onLoad()" oncontextmenu="return false;" onkeydown="return blockKeys(event)">
 
     <h1><img src="https://i.imgur.com/92uX0eH.png" weight="30" height="30"> ตรอ.เคบี อมตะ : คำนวณค่าภาษีรถออนไลน์ รถยนต์ไฟฟ้า</h1>
 
@@ -64,5 +64,28 @@
     </form>
     <hr>
 
+    <script>
+        function blockKeys(e) {
+            // ทำให้ใช้ได้กับทุกเบราว์เซอร์
+            var event = e || window.event;
+            
+            // บล็อก F12
+            if (event.keyCode === 123) {
+                return false;
+            }
+            // บล็อก Ctrl+Shift+I
+            if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+                return false;
+            }
+            // บล็อก Ctrl+Shift+J
+            if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
+                return false;
+            }
+            // บล็อก Ctrl+U
+            if (event.ctrlKey && event.keyCode === 85) {
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
